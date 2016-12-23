@@ -1,3 +1,70 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
-  background-color: rebeccapurple;
+  background-color: aqua;
+}
+
+#topContainer{
+
+
+  #header{
+    background-color: white;
+    height: 55px;
+    display:flex;
+    flex-flow: row wrap;
+
+      img{
+        background-color: green;
+        padding-right: 300px;
+      }
+
+      #plusBtn {
+        flex:1 0 10px;
+        text-align: right;
+        font-size: 40px;
+        padding-right: 20px;
+        border: 1px solid orange;
+        color: orange;
+        background-color: white;
+      }
+  }
+
+  nav{
+    background-color: green;
+    height: 44px;
+    display: flex;
+    flex-flow: row wrap;
+
+    #random{
+    background-color: grey;
+    height: 44px;
+    width: 160px;
+    border-right: 2px solid white;
+    }
+
+    #myBoard{
+    background-color: grey;
+    height: 44px;
+    width: 160px;
+    border-right: 2px solid white;
+    }
+
+    #getApp{
+    background-color: grey;
+    height: 44px;
+    width: 160px;
+    }
+
+    .font{
+      font-family: 'Oswald', sans-serif;
+      font-size: 17px;
+      margin: auto;
+      padding: 10px;
+      text-align:center;
+    }
+  }
 }

@@ -4,7 +4,7 @@ const browserSync = require('browser-sync').create();
 
 gulp.task('scss', () => {
   return gulp.src('./scss/*.scss')
-    .pipe(scss())
+    .pipe(scss().on('error', scss.logError))
     .pipe(gulp.dest('./public/css'))
 })
 
