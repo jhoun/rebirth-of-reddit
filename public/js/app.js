@@ -45,22 +45,8 @@ topContainer.appendChild(nav);
 //POST AREA
 var content = document.getElementById('content');
 
-//Creates "postContainer" from content
-var postContainer = document.createElement('div');
-postContainer.classList.add('postContainer');
-content.appendChild(postContainer);
 
-  //Creates "post" from content
-  var post = document.createElement('div');
-  post.classList.add('post');
-  postContainer.appendChild(post);
-
-    //Creats "imgContainer" from content
-    var imgContainer = document.createElement('div');
-    imgContainer.classList.add('imgContainer');
-    post.appendChild(imgContainer);
-
-//Request to get img
+//Request to get data
 var oReq = new XMLHttpRequest();
 oReq.addEventListener("load", getData);
 oReq.open("GET", "https://www.reddit.com/r/aww/.json");
@@ -71,36 +57,53 @@ function getData(){
   var aww = JSON.parse(this.responseText);
   console.log(aww);
 
-  var url = aww.data.children[2].data.url;
-  var title = aww.data.children[2].data.title;
-  var author = aww.data.children[2].data.author;
-  var date = aww.data.children[2].data.created;
-  var newDate = new Date( date * 1000);
+  for (var i = 0; i < aww.data.children.length; i++){
+    //variables from reddit data
+    var url = aww.data.children[i].data.url;
+    var title = aww.data.children[i].data.title;
+    var author = aww.data.children[i].data.author;
+    var date = aww.data.children[i].data.created;
+    var newDate = new Date( date * 1000);
 
-  var isGif = /gifv/i.test(url);
-  if (isGif){
-    var url = url.replace(/gifv/i, 'gif');
+    //Creates "postContainer" from content
+    var postContainer = document.createElement('div');
+    postContainer.classList.add('postContainer');
+    content.appendChild(postContainer);
+
+    //Creates "post" from content
+    var post = document.createElement('div');
+    post.classList.add('post');
+    postContainer.appendChild(post);
+
+    //Creats "imgContainer" from content
+    var imgContainer = document.createElement('div');
+    imgContainer.classList.add('imgContainer');
+    post.appendChild(imgContainer);
+
+
+    //to find if gif img is valid
+    var isGif = /gifv/i.test(url);
+    if (isGif){
+      var url = url.replace(/gifv/i, 'gif');
+    }
+
+    //Creates <img> from post
+    var imgPost = document.createElement('img');
+    imgPost.src = url;
+    imgContainer.appendChild(imgPost)
+
+    //Creates "postHeader" from post
+    var postHeader = document.createElement('div');
+    postHeader.classList.add('postHeader');
+    postHeader.innerHTML = title;
+    post.appendChild(postHeader);
+
+    //Creates "postMetaData" from post
+    var postMetaData = document.createElement('div');
+    postMetaData.classList.add('postMetaData');
+    postMetaData.innerHTML = "by " + author + " * " + newDate ;
+    post.appendChild(postMetaData);
   }
-
-  console.log(url);
-
-  //Creates <img> from post
-  var imgPost = document.createElement('img');
-  imgPost.src = url;
-  imgContainer.appendChild(imgPost)
-
-
-  //Creates "postHeader" from post
-  var postHeader = document.createElement('div');
-  postHeader.classList.add('postHeader');
-  postHeader.innerHTML = title;
-  post.appendChild(postHeader);
-
-  //Creates "postMetaData" from post
-  var postMetaData = document.createElement('div');
-  postMetaData.classList.add('postMetaData');
-  postMetaData.innerHTML = "by " + author + " * " + newDate ;
-  post.appendChild(postMetaData);
 }
 
     //Creates "postContent" from post
