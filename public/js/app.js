@@ -62,15 +62,21 @@ content.appendChild(postContainer);
 
 //Request to get img
 var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", getImg);
+oReq.addEventListener("load", getData);
 oReq.open("GET", "https://www.reddit.com/r/aww/.json");
 oReq.send();
 
 //Get Image function
-function getImg(){
+function getData(){
   var aww = JSON.parse(this.responseText);
   console.log(aww);
+
   var url = aww.data.children[2].data.url;
+  var title = aww.data.children[2].data.title;
+  var author = aww.data.children[2].data.author;
+  var date = aww.data.children[2].data.created;
+  var newDate = new Date( date * 1000);
+
   var isGif = /gifv/i.test(url);
   if (isGif){
     var url = url.replace(/gifv/i, 'gif');
@@ -83,41 +89,20 @@ function getImg(){
   imgPost.src = url;
   imgContainer.appendChild(imgPost)
 
-}
 
-//Request to get title
-var oReq2 = new XMLHttpRequest();
-oReq2.addEventListener("load", getHeader);
-oReq2.open("GET", "https://www.reddit.com/r/aww/.json");
-oReq2.send();
-
-//Get Header function
-function getHeader(){
-  var aww = JSON.parse(this.responseText);
   //Creates "postHeader" from post
   var postHeader = document.createElement('div');
   postHeader.classList.add('postHeader');
-  postHeader.innerHTML = aww.data.children[2].data.title;
+  postHeader.innerHTML = title;
   post.appendChild(postHeader);
+
+  //Creates "postMetaData" from post
+  var postMetaData = document.createElement('div');
+  postMetaData.classList.add('postMetaData');
+  postMetaData.innerHTML = "by " + author + " * " + newDate ;
+  post.appendChild(postMetaData);
 }
 
-var oReqAuthor = new XMLHttpRequest();
-oReq2.addEventListener("load", getAuthor);
-oReq2.open("GET", "https://www.reddit.com/r/aww/.json");
-oReq2.send();
-
-function getAuthor(){
-    var aww = JSON.parse(this.responseText);
-    var author = aww.data.children[2].data.author;
-    var date = aww.data.children[2].data.created;
-    var date = new Date( date *1000);
-
-    //Creates "postMetaData" from post
-    var postMetaData = document.createElement('div');
-    postMetaData.classList.add('postMetaData');
-    postMetaData.innerHTML = "by " + author + " * " + date ;
-    post.appendChild(postMetaData);
-}
     //Creates "postContent" from post
     var postContent = document.createElement('div');
     postContent.classList.add('postContent');
