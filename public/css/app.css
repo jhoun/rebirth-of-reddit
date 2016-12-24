@@ -32,19 +32,19 @@ body {
   #topContainer nav #random {
     flex: 1 1 40px;
     background-color: grey;
-    height: 40px;
+    height: 25px;
     width: 160px;
     border-right: 2px solid white; }
   #topContainer nav #myBoard {
     flex: 1 1 40px;
     background-color: grey;
-    height: 40px;
+    height: 25px;
     width: 160px;
     border-right: 2px solid white; }
   #topContainer nav #getApp {
     flex: 1 1 40px;
     background-color: grey;
-    height: 40px;
+    height: 25px;
     width: 160px; }
   #topContainer nav .font {
     font-family: 'Oswald', sans-serif;
@@ -59,10 +59,10 @@ body {
   margin: 15px; }
   #content .postContainer .post {
     margin: 17px; }
-    #content .postContainer .post .oswald {
+    #content .postContainer .post .postHeader {
       font-family: 'Oswald', sans-serif;
       font-size: 30px; }
-    #content .postContainer .post .metaData {
+    #content .postContainer .post .postMetaData {
       font-family: 'Oswald', sans-serif;
       font-size: 15px;
       color: grey; }

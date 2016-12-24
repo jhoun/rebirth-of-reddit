@@ -1,4 +1,4 @@
-//Navigation Area
+//NAVIGATION AREA
 var topContainer = document.getElementById('topContainer');
 
 //Creates "header" <div> from topContainer
@@ -41,3 +41,39 @@ topContainer.appendChild(nav);
   getApp.id = 'getApp';
   getApp.classList.add('font');
   nav.appendChild(getApp);
+
+//POST AREA
+var content = document.getElementById('content');
+
+//Creates "postContainer" from content
+var postContainer = document.createElement('div');
+postContainer.classList.add('postContainer');
+content.appendChild(postContainer);
+
+  //Creates "post" from content
+  var post = document.createElement('div');
+  post.classList.add('post');
+  postContainer.appendChild(post);
+
+    //Creates <img> from post
+    var imgPost = document.createElement('img');
+    imgPost.src ="asdf";
+    post.appendChild(imgPost)
+
+    //Creates "postHeader" from post
+    var postHeader = document.createElement('div');
+    postHeader.classList.add('postHeader');
+    postHeader.innerHTML = "header here";
+    post.appendChild(postHeader);
+
+    //Creates "postMetaData" from post
+    var postMetaData = document.createElement('div');
+    postMetaData.classList.add('postMetaData');
+    postMetaData.innerHTML = "Author/ Date Posted / views";
+    post.appendChild(postMetaData);
+
+    //Creates "postContent" from post
+    var postContent = document.createElement('div');
+    postContent.classList.add('postContent');
+    postContent.innerHTML = "Content Here,Content Here,Content Here,Content Here,Content Here ";
+    post.appendChild(postContent);
