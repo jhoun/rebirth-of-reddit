@@ -32,19 +32,19 @@ body {
   #topContainer nav #random {
     flex: 1 1 40px;
     background-color: grey;
-    height: 44px;
+    height: 40px;
     width: 160px;
     border-right: 2px solid white; }
   #topContainer nav #myBoard {
     flex: 1 1 40px;
     background-color: grey;
-    height: 44px;
+    height: 40px;
     width: 160px;
     border-right: 2px solid white; }
   #topContainer nav #getApp {
     flex: 1 1 40px;
     background-color: grey;
-    height: 44px;
+    height: 40px;
     width: 160px; }
   #topContainer nav .font {
     font-family: 'Oswald', sans-serif;
