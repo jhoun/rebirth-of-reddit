@@ -55,10 +55,19 @@ body {
 
 #content .postContainer {
   background-color: white;
-  height: 480px;
+  height: 80%;
   margin: 15px; }
   #content .postContainer .post {
     margin: 17px; }
+    #content .postContainer .post .imgContainer {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center; }
+      #content .postContainer .post .imgContainer img {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        width: 95%;
+        height: 30%; }
     #content .postContainer .post .postHeader {
       font-family: 'Oswald', sans-serif;
       font-size: 30px; }

@@ -76,11 +76,24 @@ body{
 
   .postContainer{
     background-color: white;
-    height: 480px;
+    height: 80%;
     margin: 15px;
 
     .post {
       margin: 17px;
+
+      .imgContainer{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+
+        img {
+          margin-top: 25px;
+          margin-bottom: 10px;
+          width: 95%;
+          height: 30%;
+        }
+      }
 
       .postHeader{
         font-family: 'Oswald', sans-serif;
