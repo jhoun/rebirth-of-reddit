@@ -8,20 +8,20 @@ body {
 
 #topContainer #header {
   background-color: white;
-  height: 60px;
-  display: flex;
-  flex-flow: row wrap; }
+  height: 60px; }
   #topContainer #header img {
-    background-color: white;
-    padding-right: 300px; }
-  #topContainer #header #plusBtn {
-    flex: 1 0 10px;
-    text-align: right;
-    font-size: 40px;
-    padding-right: 20px;
-    border: 1px solid orange;
-    color: orange;
+    position: absolute;
     background-color: white; }
+  #topContainer #header #plusBtnContainer #plusBtn {
+    right: 100px;
+    position: absolute;
+    font-size: 40px;
+    border: 2px solid orange;
+    color: orange;
+    background-color: white;
+    text-align: right;
+    margin-top: 10px;
+    padding-bottom: -5px; }
 
 #topContainer nav {
   background-color: green;
@@ -31,19 +31,19 @@ body {
   justify-content: center; }
   #topContainer nav #random {
     flex: 1 1 40px;
-    background-color: grey;
+    background-color: #3a3a3c;
     height: 25px;
     width: 160px;
     border-right: 2px solid white; }
   #topContainer nav #myBoard {
     flex: 1 1 40px;
-    background-color: grey;
+    background-color: #3a3a3c;
     height: 25px;
     width: 160px;
     border-right: 2px solid white; }
   #topContainer nav #getApp {
     flex: 1 1 40px;
-    background-color: grey;
+    background-color: #3a3a3c;
     height: 25px;
     width: 160px; }
   #topContainer nav .font {
@@ -51,30 +51,97 @@ body {
     font-size: 17px;
     margin: auto;
     padding: 10px;
-    text-align: center; }
+    text-align: center;
+    color: #818285; }
 
-#content .postContainer {
-  background-color: white;
-  height: 80%;
-  margin: 15px; }
-  #content .postContainer .post {
-    margin: 17px; }
-    #content .postContainer .post .imgContainer {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center; }
-      #content .postContainer .post .imgContainer img {
-        margin-top: 25px;
-        margin-bottom: 10px;
-        width: 95%;
-        height: 30%; }
-    #content .postContainer .post .postHeader {
-      font-family: 'Oswald', sans-serif;
-      font-size: 30px; }
-    #content .postContainer .post .postMetaData {
-      font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      color: grey; }
-    #content .postContainer .post .postContent {
-      font-family: 'Lato', sans-serif;
-      font-size: 20px; }
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  #content .postContainer {
+    background-color: white;
+    height: 80%;
+    margin: 15px; }
+    #content .postContainer .post {
+      margin: 17px; }
+      #content .postContainer .post .imgContainer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center; }
+        #content .postContainer .post .imgContainer img {
+          margin-top: 25px;
+          margin-bottom: 10px;
+          width: 95%;
+          height: 30%; }
+      #content .postContainer .post .postHeader {
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px; }
+      #content .postContainer .post .postMetaData {
+        font-family: 'Oswald', sans-serif;
+        font-size: 15px;
+        color: grey; }
+      #content .postContainer .post .postContent {
+        font-family: 'Lato', sans-serif;
+        font-size: 20px; } }
+
+@media screen and (min-width: 600px) and (max-width: 999px) {
+  #content {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 5%;
+    padding-left: 3%;
+    padding-right: 3%; }
+    #content .postContainer {
+      background-color: white;
+      margin: 15px;
+      flex: 1 0 45%; }
+      #content .postContainer .post {
+        margin: 17px; }
+        #content .postContainer .post .imgContainer {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center; }
+          #content .postContainer .post .imgContainer img {
+            margin-bottom: 10px;
+            width: 90%;
+            height: 40%; }
+        #content .postContainer .post .postHeader {
+          font-family: 'Oswald', sans-serif;
+          font-size: 30px; }
+        #content .postContainer .post .postMetaData {
+          font-family: 'Oswald', sans-serif;
+          font-size: 15px;
+          color: grey; }
+        #content .postContainer .post .postContent {
+          font-family: 'Lato', sans-serif;
+          font-size: 20px; } }
+
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  #content {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 2%;
+    padding-left: 15%;
+    padding-right: 15%; }
+    #content .postContainer {
+      background-color: white;
+      margin: 15px;
+      flex: 1 0 40%; }
+      #content .postContainer .post {
+        margin: 17px; }
+        #content .postContainer .post .imgContainer {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center; }
+          #content .postContainer .post .imgContainer img {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            width: 98%;
+            height: 300px;
+            object-fit: cover; }
+        #content .postContainer .post .postHeader {
+          font-family: 'Oswald', sans-serif;
+          font-size: 1.5em; }
+        #content .postContainer .post .postMetaData {
+          font-family: 'Oswald', sans-serif;
+          color: grey; }
+        #content .postContainer .post .postContent {
+          font-family: 'Lato', sans-serif;
+          font-size: 20px; } }
