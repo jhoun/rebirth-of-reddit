@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -7,10 +7,26 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   <link rel="stylesheet" href="./css/app.css" type="text/css">
 </head>
-<body>
+<body ng-app="app">
   <div id="topContainer"></div>
   <div id="content"></div>
-<script src="js/app.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
+
+  <div ng-controller="myController">
+
+
+    <ul>
+        <li class="reddit" ng-repeat="red in reddit">
+          <h4 class="reddit_title">{{red.children.data.title}}</h4>
+        </li>
+      </ul>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/controller.js"></script>
+  <script src="./js/providers.js"></script>
 </body>
 </html>

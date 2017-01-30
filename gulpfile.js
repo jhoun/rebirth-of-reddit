@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const scss = require('gulp-sass');
 const browserSync = require('browser-sync').create();
-const nodemon = require('gulp-nodemon');;
 
 gulp.task('scss', () => {
   return gulp.src('./scss/*.scss')
@@ -22,12 +21,6 @@ gulp.task('watch',['browserSync'], () => {
   gulp.watch('./scss/**/*.scss', ['scss'])
 })
 
-gulp.task('start', function () {
-  nodemon({
-    script: 'server.js'
-  , ext: 'js html'
-  , env: { 'NODE_ENV': 'development' }
-  })
-})
 
-gulp.task('default',['scss', 'watch', 'start']);
+
+gulp.task('default',['scss', 'watch']);
