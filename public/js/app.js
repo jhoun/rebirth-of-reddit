@@ -132,9 +132,9 @@
   var app = angular.module('app');
 
   app
-      .config(['RedditProvider', function(RedditProvider){
+      .config(['PostsProvider', function(PostsProvider){
           // config
-          RedditProvider.setEndpoint('https://www.reddit.com/r/aww.json');
+          PostsProvider.setEndpoint('https://www.reddit.com/r/aww.json');
       }])
       .run(function(){
           // initialize
