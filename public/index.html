@@ -14,13 +14,19 @@
 
   <div ng-controller="myController">
 
-
-    <ul>
-        <li class="reddit" ng-repeat="red in reddit">
-          <h4 class="reddit_title">{{red.children.data.title}}</h4>
-        </li>
-      </ul>
-
+    <div class="reddit" ng-repeat="red in reddit">
+      <div id="content">
+        <div class="postContainer">
+          <div class="post">
+            <div class="imgContainer">
+              <img src="{{red.data.url}}"/>
+            </div>
+              <div class="postHeader">{{red.data.title}}</div>
+              <div class="content">{{red.data.author}}</div>
+              <div class="content">{{red.data.url}}</div>
+          </div>
+        </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 
