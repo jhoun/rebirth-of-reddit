@@ -9,6 +9,7 @@
     $scope.res = [];
       Posts.getPosts()
         .then(function(res){
+          res.data.data.children.shift();
           var posts = res.data.data.children.map(function(post) {
             if (/gifv/i.test(post.data.url)) {
               post.data.url = post.data.url.replace(/gifv/i, 'gif');

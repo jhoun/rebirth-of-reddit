@@ -7,37 +7,31 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   <link rel="stylesheet" href="./css/app.css" type="text/css">
 </head>
-<body ng-app="app">
-  <div id="topContainer"></div>
-  <div id="content"></div>
+  <body ng-app="app">
 
-  <div id="topContainer">
-    <div id="header"></div>
-      <img src="./assets/logo.svg">
-      <div src
-  </div>
+    <div id="topContainer">
+      <div id="header"></div>
+        <img id="logo" src="./assets/logo.svg">
+    </div>
 
 
-  <div ng-controller="myController">
-
-    <div class="reddit" ng-repeat="red in reddit">
-      <div id="content">
-        <div class="postContainer">
-          <div class="post">
-            <div clZass="imgContainer">
-              <img src="{{red.data.url}}"/>
-            </div>
-              <div class="postHeader">{{red.data.title}}</div>
-              <div class="content">{{red.data.author}}</div>
+    <div class="content" ng-controller="myController">
+      <div class="postContainer" ng-repeat="red in reddit">
+        <div class="post">
+          <div class="imgContainer">
+            <img class="img" src="{{red.data.url}}"/>
+          </div>
+            <div class="postHeader">{{red.data.title}}</div>
+            <div class="author"><span>by:</span> {{red.data.author}}</div>
           </div>
         </div>
+      </div>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/controller.js"></script>
-  <script src="./js/providers.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/controller.js"></script>
+    <script src="./js/providers.js"></script>
+  </body>
 </html>

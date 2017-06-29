@@ -2,224 +2,69 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Oswald;
 }
 
 body{
   background-image: url("/assets/bg.jpg");
 }
 
-#topContainer{
+#topContainer {
+  background-color: white;
+  padding: 20px 0;
 
-  #header{
+  #header {
+
+  }
+  #logo {
+    margin-left: 30px;
+  }
+}
+
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 100px;
+
+  .postContainer {
     background-color: white;
-    height: 60px;
+    height: 500px;
+    width: 450px;
+    margin: 20px 15px;
 
+    .post {
+      margin: 30px;
 
-      img{
-        position: absolute;
-
-        background-color: white;
-      }
-
-      #plusBtnContainer{
-
-
-
-        #plusBtn {
-          right: 100px;
-          position: absolute;
-          font-size: 40px;
-          border: 2px solid orange;
-          color: orange;
-          background-color: white;
-          text-align: right;
-          margin-top: 10px;
-          padding-bottom: -5px;
-      }
-    }
-  }
-
-  nav{
-    background-color: green;
-    height: 44px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-
-    #random{
-    flex: 1 1 40px;
-    background-color: #3a3a3c;
-    height: 25px;
-    width: 160px;
-    border-right: 2px solid white;
-    }
-
-    #myBoard{
-    flex: 1 1 40px;
-    background-color: #3a3a3c;
-    height: 25px;
-    width: 160px;
-    border-right: 2px solid white;
-    }
-
-    #getApp{
-    flex: 1 1 40px;
-    background-color: #3a3a3c;
-    height: 25px;
-    width: 160px;
-    }
-
-    .font{
-      font-family: 'Oswald', sans-serif;
-      font-size: 17px;
-      margin: auto;
-      padding: 10px;
-      text-align:center;
-      color: #818285;
     }
   }
 }
 
 
+.imgContainer {
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
 
-@media screen and (min-width: 320px) and (max-width: 599px){
-#content{
+  .img {
+    height: auto;
+    width: 100%;
 
-    .postContainer{
-      background-color: white;
-      height: 80%;
-      margin: 15px;
-
-      .post {
-        margin: 17px;
-
-        .imgContainer{
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: center;
-
-          img {
-            margin-top: 25px;
-            margin-bottom: 10px;
-            width: 95%;
-            height: 30%;
-          }
-        }
-
-        .postHeader{
-          font-family: 'Oswald', sans-serif;
-          font-size: 30px;
-        }
-
-        .postMetaData{
-          font-family: 'Oswald', sans-serif;
-          font-size: 15px;
-          color: grey;
-        }
-
-        .postContent{
-          font-family: 'Lato', sans-serif;
-          font-size: 20px;
-        }
-      }
-    }
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 999px){
-#content{
-  display: flex;
-  flex-flow: row wrap;
-  padding-top: 5%;
-  padding-left: 3%;
-  padding-right: 3%;
-
-    .postContainer{
-      background-color: white;
-      margin: 15px;
-      flex:1 0 45%;
-
-      .post {
-        margin: 17px;
-
-        .imgContainer{
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: center;
-
-          img {
-            margin-bottom: 10px;
-            width: 90%;
-            height: 40%;
-          }
-        }
-
-        .postHeader{
-          font-family: 'Oswald', sans-serif;
-          font-size: 30px;
-        }
-
-        .postMetaData{
-          font-family: 'Oswald', sans-serif;
-          font-size: 15px;
-          color: grey;
-        }
-
-        .postContent{
-          font-family: 'Lato', sans-serif;
-          font-size: 20px;
-        }
-      }
-    }
-  }
+.postHeader {
+  margin-top: 20px;
+  font-size: 2vw;
 }
 
-@media screen and (min-width:1000px) and (max-width: 1500px){
-#content{
-  display: flex;
-  flex-flow: row wrap;
-  padding-top: 2%;
-  padding-left: 15%;
-  padding-right: 15%;
+.author {
+  margin-top: 10px;
+  font-size: 1vw;
+  font-family: Lato;
 
-    .postContainer{
-      background-color: white;
-      margin: 15px;
-      flex:1 0 40%;
-
-      .post {
-        margin: 17px;
-
-        .imgContainer{
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: center;
-
-
-          img {
-            margin-top: 25px;
-            margin-bottom: 10px;
-            width: 98%;
-            height: 300px;
-            object-fit: cover;
-          }
-        }
-
-        .postHeader{
-          font-family: 'Oswald', sans-serif;
-          font-size: 1.5em;
-        }
-
-        .postMetaData{
-          font-family: 'Oswald', sans-serif;
-          color: grey;
-        }
-
-        .postContent{
-          font-family: 'Lato', sans-serif;
-          font-size: 20px;
-        }
-      }
-    }
+  span {
+    margin-right: 3px;
   }
 }
