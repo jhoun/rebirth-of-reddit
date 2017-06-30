@@ -23,6 +23,7 @@
           </div>
             <div class="postHeader">{{red.data.title}}</div>
             <div class="author"><span>by:</span> {{red.data.author}}</div>
+            <div class="date">{{red.data.created_utc}}</div>
           </div>
         </div>
       </div>
@@ -33,5 +34,7 @@
     <script src="./js/app.js"></script>
     <script src="./js/controller.js"></script>
     <script src="./js/providers.js"></script>
+    <script src="components/moment/moment.js"></script>
+    <script src="components/angular-moment/angular-moment.js"></script>
   </body>
 </html>
